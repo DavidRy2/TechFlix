@@ -1,6 +1,3 @@
-let email = "cliente@gmail.com"
-let senha = "12345678"
-
 function login(){
 
     const email = document.getElementById("email").value;
@@ -8,10 +5,14 @@ function login(){
     
     if (email === "cliente@gmail.com" && senha === "12345678") {
         alert("Login Realizado com sucesso");
-        window.location.href = "home.html";
+        window.location.href = "home_cliente.html";
 
-    }else{
+    }else if(email === "adm@gmail.com" && senha === "12345678"){
+        alert("Login Realizado com sucesso");
+        window.location.href = "home_adm.html";
+    }    
+    
+    else{
         alert("Dados de login incorretos!!!")
     }
-
 }
