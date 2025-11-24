@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wayne Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --------- HERO (CAROUSEL) ---------- */
+        .carousel-item {
+            height: 80vh;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --------- SESSÃO DE DESTAQUES ---------- */
+
+        .icon-circle {
+            width: 140px;
+            height: 140px;
+            background: #7bb0df33;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 40px;
+        }
+        .icon-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+        .text2{
+          color:rgb(6, 6, 36);
+          /*margin-top: 100px;*/
+        }
+       
+        .container{
+          margin-bottom: 10px; 
+        }
+
+        /* --------- FOOTER ---------- */
+        footer {
+            margin-top: 480px;
+            padding: 40px 0;
+            border-top: 1px solid #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Wayne Tech</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="produtos.html">Agendamentos</a></li>
+                <li class="nav-item"><a class="nav-link" href="agendamento.html">Serviços Agendados</a></li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar...">
+                <button class="btn btn-outline-success">Busca</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="text-center flooter_fundo">
+    <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
+    <a href="#" class="text-decoration-none text-secondary">Voltar ao topo</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
