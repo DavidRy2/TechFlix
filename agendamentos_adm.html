@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wayne Tech</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
-        /* --------- HERO (CAROUSEL) ---------- */
         .carousel-item {
             height: 80vh;
             min-height: 400px;
             background-size: cover;
             background-position: center;
         }
-
-        /* --------- SESSÃO DE DESTAQUES ---------- */
-
         .icon-circle {
             width: 140px;
             height: 140px;
@@ -34,16 +31,6 @@
             border-radius: 50%;
             display: block;
         }
-        .text2{
-          color:rgb(6, 6, 36);
-          /*margin-top: 100px;*/
-        }
-       
-        .container{
-          margin-bottom: 10px; 
-        }
-
-        /* --------- FOOTER ---------- */
         footer {
             margin-top: 480px;
             padding: 40px 0;
@@ -68,49 +55,41 @@
                 <li class="nav-item"><a class="nav-link active" href="home_adm.html">Início</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Serviços Agendados</a></li>
             </ul>
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar...">
-                <button class="btn btn-outline-success">Busca</button>
-            </form>
         </div>
     </div>
 </nav>
 
 <div class="pt-5" style="margin-top: 80px;">
-
     <div class="container my-5 py-4" style="background-color: white; border-radius: 15px;">
-        <h2 class="mb-4" style="color: grey; text-align: center;">Solicitações de agendamentos:</h2>
+        <h2 class="mb-4 text-center" style="color: grey;">Solicitações de agendamentos:</h2>
 
         <table class="table table-dark table-striped mt-3" id="tabela-clientes">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Descrição do serviço</th>
-                <th>Data da solicitação</th>
-                <th>Contato com o cliente</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <!-- Campo das informações dos clientes -->
-
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th>#ID</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Descrição do serviço</th>
+                    <th>Data da solicitação</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
 
     </div>
-
 </div>
 
-
-<!-- FOOTER -->
-<footer class="text-center flooter_fundo">
+<footer class="text-center">
     <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
-    <a href="#" class="text-decoration-none text-secondary">Voltar ao topo</a>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script_dados_clientes.js"></script>
+
+<script>
+    exibirAgendamentosNaTabela("tabela-clientes");
+</script>
+
 </body>
 </html>
