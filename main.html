@@ -13,14 +13,13 @@
         font-family: Arial, sans-serif;
     }
 
-    /* Círculo da logo */
     #logo-circle {
         width: 260px;
         height: 260px;
         border-radius: 50%;
         cursor: pointer;
 
-        background-image: url('LOGO3.jpeg'); /* SUA IMAGEM */
+        background-image: url('LOGO3.jpeg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -37,7 +36,6 @@
         transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    /* Efeito ao passar o mouse */
     #logo-circle:hover {
         transform: translate(-50%, -50%) scale(1.10);
         box-shadow: 
@@ -51,15 +49,15 @@
 
 <body>
 
-<div id="logo-circle"></div>
+<!-- Aqui entra o título -->
+<div id="logo-circle" title="Clique para login"></div>
 
 <script>
 
 const circle = document.getElementById("logo-circle");
 
-/* Redirecionamento ao clicar */
 circle.addEventListener("click", () => {
-    window.location.href = "index.html"; // página desejada
+    window.location.href = "index.html";
 });
 
 </script>
