@@ -6,178 +6,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços - WayneTech</title>
 
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        
-        .banner-servicos {
-            height: 300px;
-            background: url('https://i.imgur.com/iAvxM7G.jpeg') center/cover no-repeat;
-            box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.6);
+        body {
+            background: #0d0d12;
+            color: #dcdcdc;
+            font-family: "Segoe UI", sans-serif;
+            overflow-x: hidden;
         }
 
-        
+        /* NAVBAR MODERNA */
+        .navbar {
+            background: rgba(10, 10, 14, 0.85) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #2a2a2f;
+        }
+
+        .navbar-brand {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            color: aqua !important;
+        }
+
+        .nav-link:hover {
+            color: #0dcaf0 !important;
+        }
+
+        /* BANNER */
+        .banner-servicos {
+            height: 320px;
+            background: url('https://i.imgur.com/iAvxM7G.jpeg') center/cover no-repeat;
+            box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
+        }
+
+        /* CARDS MAIS FUTURISTAS */
         .card-servico {
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: 0.3s;
-            background: #1f1f1f;
+            border-radius: 15px;
+            background: #141418;
+            border: 1px solid #23232b;
+            padding-bottom: 10px;
+            transition: 0.35s ease;
         }
 
         .card-servico:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: #0dcaf0;
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(13, 202, 240, 0.15);
         }
 
         .card-servico img {
             height: 180px;
+            border-bottom: 1px solid #202028;
             object-fit: cover;
         }
 
         .card-title {
-            font-weight: bold;
+            color: aqua;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 120px;
+            padding: 45px 0;
+            background: #0c0c10;
+            border-top: 1px solid #2d2d32;
         }
     </style>
 </head>
 
 <body>
 
- 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-4" href="#">Wayne Tech</a>
+            <a class="navbar-brand fw-bold" href="#">Wayne Tech</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto me-3">
                     <li class="nav-item"><a href="home_cliente.html" class="nav-link">Início</a></li>
-                    <li class="nav-item"><a href="servicos.html" class="nav-link active">Serviços</a></li>
+                    <li class="nav-item"><a href="servicos.html" class="nav-link active" style="color: #0dcaf0;">Serviços</a></li>
                     <li class="nav-item"><a href="agendamento.html" class="nav-link">Agendamento</a></li>
                 </ul>
 
-                <form class="d-flex ms-3" role="search">
-                    <input class="form-control text-white bg-dark border-secondary" type="search" placeholder="Buscar...">
-                    <button class="btn btn-primary ms-2">Buscar</button>
+                <!-- BARRA DE BUSCA -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2"
+                           type="search"
+                           placeholder="Buscar serviço..."
+                           aria-label="Search"
+                           style="background:#1b1b22; border:1px solid #2b2b32; color:#fff;">
+                    <button class="btn btn-outline-info" type="submit">Buscar</button>
                 </form>
+
             </div>
         </div>
     </nav>
 
-    
-    <div class="banner-servicos d-flex align-items-center">
-        <div class="container text-center">
+    <!-- BANNER -->
+    <div class="banner-servicos d-flex align-items-center justify-content-center text-center" style="margin-top: 80px;">
+        <div>
             <h1 class="fw-bold display-4 text-white">Serviços Técnicos</h1>
             <p class="text-light fs-5">Assistência especializada e soluções rápidas para seus dispositivos.</p>
         </div>
     </div>
 
-
+    <!-- LISTA DE SERVIÇOS -->
     <div class="container my-5">
         <div class="row g-4">
 
-            
+            <!-- CARD 1 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwS34nk5fdGvkLhskmZ0lWvesivS0g3t9oHw&s" class="card-img-top" alt="Troca de Tela">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwS34nk5fdGvkLhskmZ0lWvesivS0g3t9oHw&s">
+                    <div class="p-3">
                         <h5 class="card-title">Troca de Tela</h5>
-                        <p class="card-text text-muted">Substituição de telas quebradas ou manchadas (notebook e celular).</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Substituição de telas quebradas ou manchadas.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-        
+            <!-- CARD 2 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ie8dwMHDSenl64U4zp4vqobWeWPzlxnLVQ&s" class="card-img-top" alt="Formatação Completa">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ie8dwMHDSenl64U4zp4vqobWeWPzlxnLVQ&s">
+                    <div class="p-3">
                         <h5 class="card-title">Formatação Completa</h5>
-                        <p class="card-text text-muted">Sistema limpo, otimizado e com backup de arquivos.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Sistema limpo, otimizado e seguro.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-           
+            <!-- CARD 3 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://blog.fixonline.com.br/wp-content/uploads/2023/04/kilian-seiler-PZLgTUAhxMM-unsplash-scaled.jpg" class="card-img-top" alt="Troca de Bateria">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://blog.fixonline.com.br/wp-content/uploads/2023/04/kilian-seiler-PZLgTUAhxMM-unsplash-scaled.jpg">
+                    <div class="p-3">
                         <h5 class="card-title">Troca de Bateria</h5>
-                        <p class="card-text text-muted">Baterias originais e compatíveis para celulares e notebooks.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Baterias originais e compatíveis.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-            
+            <!-- CARD 4 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://us.123rf.com/450wm/sinenkiy/sinenkiy2301/sinenkiy230100982/196573644-fotos-em-close-up-mostrando-o-processo-de-reparo-do-telefone-celular.jpg?ver=6" class="card-img-top" alt="Limpeza Interna">
-                    <div class="card-body">
-                        <h5 class="card-title">Limpeza Interna (Geral)</h5>
-                        <p class="card-text text-muted">Aumento de desempenho, redução de temperatura e remoção de sujeira.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                <div class="card-servico h-100">
+                    <img src="https://us.123rf.com/450wm/sinenkiy/sinenkiy2301/sinenkiy230100982/196573644-fotos-em-close-up-mostrando-o-processo-de-reparo-do-telefone-celular.jpg?ver=6">
+                    <div class="p-3">
+                        <h5 class="card-title">Limpeza Interna</h5>
+                        <p class="text-muted">Melhora de desempenho e temperatura.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-           
+            <!-- CARD 5 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://1001solucoes.com.br/wp-content/uploads/2021/06/troca-de-teclado-notebook.jpg" class="card-img-top" alt="Troca de Teclado">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://1001solucoes.com.br/wp-content/uploads/2021/06/troca-de-teclado-notebook.jpg">
+                    <div class="p-3">
                         <h5 class="card-title">Troca de Teclado</h5>
-                        <p class="card-text text-muted">Teclados novos e originais para notebooks com defeito.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Teclados novos e originais.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-           
+            <!-- CARD 6 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://i0.wp.com/indicca.com.br/wp-content/uploads/2020/11/Restauracao_do_sistema_e_formatacao_sao_a_mesma_coisa_Indicca.jpg" class="card-img-top" alt="Recuperação de Sistema">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://i0.wp.com/indicca.com.br/wp-content/uploads/2020/11/Restauracao_do_sistema_e_formatacao_sao_a_mesma_coisa_Indicca.jpg">
+                    <div class="p-3">
                         <h5 class="card-title">Recuperação de Sistema</h5>
-                        <p class="card-text text-muted">Correção de erros, falhas e restauração de Windows.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Correção de erros e restauração.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-           
+            <!-- CARD 7 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://iphonemax.com.br/wp-content/uploads/2023/10/tela-de-iphone.jpg" class="card-img-top" alt="Upgrade de Hardware">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://iphonemax.com.br/wp-content/uploads/2023/10/tela-de-iphone.jpg">
+                    <div class="p-3">
                         <h5 class="card-title">Upgrade de Hardware</h5>
-                        <p class="card-text text-muted">Aumento de desempenho com SSD, memória RAM e GPU.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Aumento de desempenho com SSD e RAM.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
-           
+            <!-- CARD 8 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card card-servico h-100">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2JUQ1uQIQl51JLZ7nM-nNaRhPeub6dNoQA&s" class="card-img-top" alt="Reparo de Placa Mãe">
-                    <div class="card-body">
+                <div class="card-servico h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2JUQ1uQIQl51JLZ7nM-nNaRhPeub6dNoQA&s">
+                    <div class="p-3">
                         <h5 class="card-title">Reparo de Placa-Mãe</h5>
-                        <p class="card-text text-muted">Solda BGA, reparos avançados e correção de curto.</p>
-                        <a href="agendamento.html" class="btn btn-primary w-100 mt-2">Agendar Serviço</a>
+                        <p class="text-muted">Solda profissional e diagnóstico avançado.</p>
+                        <a href="agendamento.html" class="btn btn-primary w-100">Agendar Serviço</a>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <footer class="text-center">
+        <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
+        <a href="#" class="text-secondary text-decoration-none">Voltar ao topo</a>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
