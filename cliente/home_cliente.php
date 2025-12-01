@@ -144,7 +144,6 @@ require __DIR__ . '/proteger_cliente.php';
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold text-info" href="#">Wayne Tech</a>
@@ -207,7 +206,6 @@ require __DIR__ . '/proteger_cliente.php';
 
 </div>
 
-<!-- CARDS -->
 <div class="container mt-5">
     <div class="row g-4">
 
@@ -255,7 +253,6 @@ require __DIR__ . '/proteger_cliente.php';
     </div>
 </div>
 
-<!-- MODAIS -->
 <div class="modal fade" id="emailModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-light">
@@ -297,7 +294,6 @@ require __DIR__ . '/proteger_cliente.php';
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="text-center">
     <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
     <a href="#" class="text-decoration-none text-secondary">Voltar ao topo</a>

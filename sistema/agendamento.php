@@ -1,7 +1,6 @@
 <?php 
 session_start();
 
-// PROCESSAMENTO DO FORMULÁRIO
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $arquivo = "../dados/agendamentos.json";
@@ -48,12 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* ---------- FUNDO COM IMAGEM + OVERLAY ---------- */
+        
         body {
             margin: 0;
             background: 
                 linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-                url('../assets/img/fundo.jpg'); /* SUA IMAGEM DE FUNDO */
+                url('../assets/img/fundo.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -79,14 +78,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             color: #0dcaf0 !important;
         }
 
-        /* ---------- CARD DE AGENDAMENTO ---------- */
         .card-agendar {
             max-width: 450px;
             background: rgba(20, 20, 25, 0.92);
             border: 1px solid #23232b;
             border-radius: 18px;
             padding: 25px;
-            margin: 90px auto;   /* AQUI: CARD MAIS PRA CIMA */
+            margin: 90px auto;  
             box-shadow: 0 0 25px rgba(13, 202, 240, 0.15);
             backdrop-filter: blur(5px);
             transition: 0.3s;
@@ -154,7 +152,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="../cliente/home_cliente.php">Wayne Tech</a>
@@ -186,7 +183,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 </nav>
 
-<!-- CARD DE AGENDAMENTO -->
 <div class="card-agendar">
     <div class="card-header-custom">
         <img src="../assets/img/LOGO3.jpeg" class="logo" alt="WayneTech">
@@ -211,7 +207,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </form>
 </div>
 
-<!-- FOOTER -->
 <footer>
     <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
     <a href="#" class="text-secondary text-decoration-none">Voltar ao topo</a>

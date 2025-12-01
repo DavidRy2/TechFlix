@@ -18,7 +18,6 @@ if (file_exists($arquivo)) {
     $dados = json_decode(file_get_contents($arquivo), true);
 }
 
-// Filtrar por e-mail do cliente
 $meusAgendamentos = array_filter($dados, function ($item) use ($usuarioEmail) {
     return strtolower($item['email']) === strtolower($usuarioEmail);
 });
@@ -75,7 +74,6 @@ $meusAgendamentos = array_filter($dados, function ($item) use ($usuarioEmail) {
 
 <body>
 
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm position-relative" style="z-index:3;">
         <div class="container">
             <a class="navbar-brand fw-bold fs-4" href="#">Wayne Tech</a>
@@ -98,7 +96,6 @@ $meusAgendamentos = array_filter($dados, function ($item) use ($usuarioEmail) {
     <div class="container container-content">
         <h2 class="titulo">Meus Agendamentos</h2>
 
-        <!-- MENSAGEM DE SUCESSO -->
         <?php if (isset($_GET['status']) && $_GET['status'] === "ok") : ?>
             <div id="alertaSucesso" class="alert alert-success text-center fw-semibold">
                 Agendamento realizado com sucesso!
@@ -115,7 +112,6 @@ $meusAgendamentos = array_filter($dados, function ($item) use ($usuarioEmail) {
             </script>
         <?php endif; ?>
 
-        <!-- LISTA DE AGENDAMENTOS -->
         <?php if (empty($meusAgendamentos)) : ?>
 
             <div class="alert alert-warning text-center">

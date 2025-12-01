@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Protege a página — só acessa se estiver logado
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../login.html");
     exit;
@@ -92,7 +91,6 @@ $email = $_SESSION['usuario']['email'];
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold" href="#">Wayne Tech</a>
@@ -139,7 +137,6 @@ $email = $_SESSION['usuario']['email'];
     </div>
 </nav>
 
-<!-- BANNER -->
 <div class="banner-servicos" style="margin-top: 80px;">
     <div>
         <h1 class="fw-bold display-4 text-white">Serviços Técnicos</h1>
