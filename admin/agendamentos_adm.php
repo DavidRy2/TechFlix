@@ -14,7 +14,6 @@ require __DIR__ . '/proteger_admin.php';
 
     <style>
 
-        /* ======== BASE ======== */
         body {
             padding-top: 70px;
             background: #0b0c10;
@@ -23,7 +22,6 @@ require __DIR__ . '/proteger_admin.php';
             margin: 0;
         }
 
-        /* ======== NAVBAR ======== */
         .navbar {
             background: linear-gradient(90deg, #0a0b0f, #10121a);
             border-bottom: 1px solid #1f2937;
@@ -35,7 +33,6 @@ require __DIR__ . '/proteger_admin.php';
             font-weight: bold;
         }
 
-        /* ======== SIDEBAR ======== */
         .sidebar {
             height: 100vh;
             width: 240px;
@@ -69,7 +66,6 @@ require __DIR__ . '/proteger_admin.php';
             color: #0dcaf0;
         }
 
-        /* ======== CONTEÚDO ======== */
         .content {
             margin-left: 240px;
             padding: 30px;
@@ -84,7 +80,6 @@ require __DIR__ . '/proteger_admin.php';
             margin-bottom: 25px;
         }
 
-        /* ======== TABELA ======== */
         .table {
             background: #11141b;
             border-radius: 12px;
@@ -105,7 +100,6 @@ require __DIR__ . '/proteger_admin.php';
             padding: 18px;
         }
 
-        /* ======== RODAPÉ ======== */
         footer {
             width: calc(100% - 240px);
             margin-left: 240px;
@@ -121,7 +115,6 @@ require __DIR__ . '/proteger_admin.php';
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-dark fixed-top shadow-sm">
     <div class="container-fluid">
 
@@ -143,7 +136,6 @@ require __DIR__ . '/proteger_admin.php';
     </div>
 </nav>
 
-<!-- SIDEBAR -->
 <div class="sidebar">
     <a href="home_adm.php"><i class="bi bi-house-door-fill me-2"></i>Início</a>
     <a href="agendamentos_adm.php" class="active"><i class="bi bi-calendar2-event-fill me-2"></i>Agendamentos</a>
@@ -151,7 +143,6 @@ require __DIR__ . '/proteger_admin.php';
     <a href="#"><i class="bi bi-people-fill me-2"></i>Clientes</a>
 </div>
 
-<!-- CONTEÚDO -->
 <div class="content">
 
     <h2>Todos os Agendamentos</h2>
@@ -168,14 +159,12 @@ require __DIR__ . '/proteger_admin.php';
             </thead>
 
             <tbody id="lista-agendamentos">
-                <!-- Carregado pelo JS -->
             </tbody>
         </table>
     </div>
 
 </div>
 
-<!-- RODAPÉ -->
 <footer>
     © 2025 Wayne Tech — Todos os direitos reservados
 </footer>
