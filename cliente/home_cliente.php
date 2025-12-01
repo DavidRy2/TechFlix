@@ -1,3 +1,7 @@
+<?php
+require __DIR__ . '/proteger_cliente.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 
@@ -5,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wayne Tech</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        
         body {
             background: #0d0d12;
             color: #dcdcdc;
@@ -16,7 +20,6 @@
             overflow-x: hidden;
         }
 
-       
         .navbar {
             background: rgba(10, 10, 14, 0.85) !important;
             backdrop-filter: blur(10px);
@@ -33,7 +36,6 @@
             color: #0dcaf0 !important;
         }
 
-        
         .carousel-item {
             height: 86vh;
             background-size: cover;
@@ -71,7 +73,6 @@
             font-size: 1.1rem;
         }
 
-       
         .icon-circle {
             width: 150px;
             height: 150px;
@@ -112,7 +113,6 @@
             box-shadow: 0 0 25px rgba(13, 202, 240, 0.12);
         }
 
-        /* ---------- MODAIS ---------- */
         .modal-content {
             background: #1a1a21;
             border-radius: 16px;
@@ -133,7 +133,6 @@
             background: #feffff;
         }
 
-        /* ---------- FOOTER ---------- */
         footer {
             margin-top: 120px;
             padding: 45px 0;
@@ -145,10 +144,10 @@
 
 <body>
 
-
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">Wayne Tech</a>
+        <a class="navbar-brand fw-bold text-info" href="#">Wayne Tech</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
@@ -156,16 +155,26 @@
 
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="serviços.html">Serviços</a></li>
-                <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+                
+                <li class="nav-item"><a class="nav-link active" href="home_cliente.php">Início</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="../servicos.php">Serviços</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="../sistema/agendamento.php">Agendamento</a></li>
+
             </ul>
+
+            <span class="text-info ms-3 fw-bold">
+                👋 <?= htmlspecialchars($_SESSION['usuario']['nome']) ?>
+            </span>
+
+            <a class="btn btn-danger btn-sm ms-3" href="../sistema/logout.php">Sair</a>
+
         </div>
     </div>
 </nav>
 
-
-
+<!-- HERO -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: 55px">
 
     <div class="carousel-inner">
@@ -198,12 +207,10 @@
 
 </div>
 
-
-
+<!-- CARDS -->
 <div class="container mt-5">
     <div class="row g-4">
 
-       
         <div class="col-lg-4">
             <div class="info-card text-center">
                 <div class="icon-circle">
@@ -211,8 +218,11 @@
                 </div>
                 <h3>Telefone</h3>
                 <p>Suporte imediato via WhatsApp e telefone fixo.</p>
-                <a class="btn btn-outline-info mt-3" href="https://wa.me/558399348023?text=Olá,%20vim%20do%20site%20WayneTech%20e%20quero%20saber%20mais!"
-           target="_blank">Ver mais</a>
+                <a class="btn btn-outline-info mt-3"
+                   href="https://wa.me/558399348023?text=Olá,%20vim%20do%20site%20WayneTech%20e%20quero%20saber%20mais!"
+                   target="_blank">
+                   Ver mais
+                </a>
             </div>
         </div>
 
@@ -222,28 +232,30 @@
                     <img src="https://thumbs.dreamstime.com/b/logotipo-gmail-novo-%C3%ADcone-de-vetorial-do-servi%C3%A7o-email-desenvolvido-pelo-google-redesenhado-vers%C3%A3o-o-arquivo-eps-est%C3%A1-201003176.jpg">
                 </div>
                 <h3>Email</h3>
-                <p>Envie sua dúvida ou solicite um orçamento por e-mail.</p>
-                <a class="btn btn-outline-info mt-3" data-bs-toggle="modal" data-bs-target="#emailModal">Ver mais</a>
+                <p>Envie sua dúvida ou solicite orçamento por e-mail.</p>
+                <a class="btn btn-outline-info mt-3" data-bs-toggle="modal" data-bs-target="#emailModal">
+                    Ver mais
+                </a>
             </div>
         </div>
 
-        
         <div class="col-lg-4">
             <div class="info-card text-center">
                 <div class="icon-circle">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_xWIQxw7TF8-juCpuC4fkdjSlUFzMqCSduw&s">
                 </div>
                 <h3>Endereço</h3>
-                <p>Venha nos visitar em nossa loja física.</p>
-                <a class="btn btn-outline-info mt-3" data-bs-toggle="modal" data-bs-target="#localElegantModal">Ver mais</a>
+                <p>Venha visitar nossa loja física.</p>
+                <a class="btn btn-outline-info mt-3" data-bs-toggle="modal" data-bs-target="#localElegantModal">
+                    Ver mais
+                </a>
             </div>
         </div>
 
     </div>
 </div>
 
-
-
+<!-- MODAIS -->
 <div class="modal fade" id="emailModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-light">
@@ -262,7 +274,6 @@
     </div>
 </div>
 
-<!-- ENDEREÇO -->
 <div class="modal fade" id="localElegantModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content text-light">
@@ -272,9 +283,9 @@
             </div>
             <div class="modal-body text-center">
                 <div style="font-size: 48px;">📍</div>
-                <p>Clique no botão abaixo para abrir no Google Maps:</p>
+                <p>Clique abaixo para abrir no Google Maps:</p>
 
-                <a href="https://www.google.com/maps/place/UNINASSAU+Jo%C3%A3o+Pessoa"
+                <a href="https://www.google.com/maps/place/UNINASSAU+João+Pessoa"
                    target="_blank" class="btn-elegant mt-3">
                     Abrir no Google Maps – WayneTech Loja Física
                 </a>
@@ -286,15 +297,13 @@
     </div>
 </div>
 
-
-
-
-<!-- ---------- FOOTER ---------- -->
+<!-- FOOTER -->
 <footer class="text-center">
     <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
     <a href="#" class="text-decoration-none text-secondary">Voltar ao topo</a>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

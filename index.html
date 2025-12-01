@@ -1,114 +1,65 @@
-<!DOCTYPE html>
-<html lang="pt-br" data-bs-theme="dark">
+<!DOCTYPE html> 
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - WayneTech</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style2.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Wayne Tech</title>
+
+<style>
+
+    body {
+        margin: 0;
+        overflow: hidden;
+        background: #0a0a0a;
+        font-family: Arial, sans-serif;
+    }
+
+    #logo-circle {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        background-image: url('assets/img/LOGO3.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        box-shadow: 
+            0 0 30px aqua,
+            inset 0 0 18px #00ffff80;
+
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    #logo-circle:hover {
+        transform: translate(-50%, -50%) scale(1.10);
+        box-shadow: 
+            0 0 50px aqua,
+            0 0 80px aqua,
+            inset 0 0 25px #00ffffc9;
+    }
+
+</style>
 </head>
 
-<body class="d-flex align-items-center justify-content-center vh-100">
+<body>
 
-    <main class="form-signin text-center shadow-lg p-5 rounded-4 bg-body-tertiary">
-        
-        <!-- Formulário de LOGIN conectado ao login.php -->
-        <form method="POST">
+<div id="logo-circle" title="Clique para login"></div>
 
-            <img src="LOGO3.jpeg"
-                 alt="Logo WayneTech"
-                 class="mb-4 rounded-circle shadow logo"
-                 height="80" width="80"/>
+<script>
 
-            <h1 class="h3 mb-4 fw-bold text-primary">WayneTech</h1>
+const circle = document.getElementById("logo-circle");
 
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" name="email" id="email" placeholder="nome@email.com" required>
-                <label for="email">Email</label>
-            </div>
+circle.addEventListener("click", () => {
+    window.location.href = "login.html";  // AGORA ESTÁ CORRETO
+});
 
-            <div class="form-floating mb-3">
-                <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha" required>
-                <label for="senha">Senha</label>
-            </div>
+</script>
 
-            <div class="form-check text-start mb-4">
-                <input class="form-check-input" type="checkbox" id="lembrar">
-                <label class="form-check-label" for="lembrar">Lembrar-me</label>
-            </div>
-
-            <!-- Botão de LOGIN funcionando -->
-            <button type="submit" formaction="login.php"
-                class="btn btn-primary w-100 py-2 mb-3 rounded-3">
-                Entrar
-            </button>
-
-            <!-- Botão que abre o cadastro -->
-            <button type="button" class="btn btn-outline-info w-100 py-2 mb-4 rounded-3" 
-                    data-bs-toggle="modal" data-bs-target="#cadastroModal">
-                Criar conta
-            </button>
-
-            <p class="text-secondary small mb-0">
-                © 2025 - David, Elaine, Gabriel, Joel, Tatiana.
-            </p>
-
-        </form>
-    </main>
-
-    <!-- MODAL DE CADASTRO (conecta ao cadastro.php) -->
-    <div class="modal fade" id="cadastroModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark border border-info shadow-lg">
-
-                <div class="modal-header border-info">
-                    <h5 class="modal-title text-info">Cadastro de Cliente</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-
-                    <form action="cadastro.php" method="POST">
-
-                        <div class="form-floating mb-3">
-                            <input type="text" name="nome" class="form-control" id="cadNome" required>
-                            <label for="cadNome">Nome completo</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="email" name="email" class="form-control" id="cadEmail" required>
-                            <label for="cadEmail">Email</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="password" name="senha" class="form-control" id="cadSenha" required>
-                            <label for="cadSenha">Senha</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="password" name="confirmar" class="form-control" id="cadConfirmar" required>
-                            <label for="cadConfirmar">Confirmar senha</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-info w-100">
-                            Cadastrar
-                        </button>
-
-                    </form>
-
-                </div>
-
-                <div class="modal-footer border-info">
-                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Fechar</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPTS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="javascript.js"></script>
-    <script src="login.js"></script>
 </body>
 </html>

@@ -1,11 +1,17 @@
+<?php
+require __DIR__ . '/proteger_admin.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wayne Tech - Admin</title>
+    <title>Wayne Tech - Agendamentos</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
         body {
             padding-top: 70px;
@@ -13,7 +19,6 @@
             color: #f1f1f1;
         }
 
-        /* Sidebar */
         .sidebar {
             height: 100vh;
             position: fixed;
@@ -35,31 +40,9 @@
             border-radius: 8px;
         }
 
-        /* Main content */
         .content {
             margin-left: 240px;
             padding: 20px;
-        }
-
-        /* Cards */
-        .card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 12px;
-        }
-
-        .card-header {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary, .btn-outline-success {
-            border-radius: 20px;
-        }
-
-        /* Search */
-        .search-box {
-            max-width: 400px;
         }
 
         footer {
@@ -69,12 +52,6 @@
             margin-top: 50px;
             color: #888;
         }
-
-        .table-responsive {
-            margin-top: 20px;
-        }
-
-        
     </style>
 </head>
 
@@ -84,50 +61,55 @@
 <nav class="navbar navbar-dark bg-dark fixed-top shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="#">Wayne Tech Admin</a>
-        <form class="d-flex search-box" role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar agendamentos..." aria-label="Search">
-            <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
-        </form>
+
+        <div class="d-flex align-items-center">
+            <span class="text-info me-3 fw-bold">
+                👋 <?= htmlspecialchars($_SESSION['usuario']['nome']) ?>
+            </span>
+
+            <a class="btn btn-danger btn-sm" href="../sistema/logout.php">Sair</a>
+        </div>
     </div>
 </nav>
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-    <a href="#" class="active"><i class="bi bi-house-door-fill me-2"></i>Início</a>
-    <a href="agendamentos_adm.html"><i class="bi bi-calendar2-event-fill me-2"></i>Agendamentos</a>
+    <a href="home_adm.php"><i class="bi bi-house-door-fill me-2"></i>Início</a>
+    <a href="agendamentos_adm.php" class="active"><i class="bi bi-calendar2-event-fill me-2"></i>Agendamentos</a>
     <a href="#"><i class="bi bi-gear-fill me-2"></i>Serviços</a>
     <a href="#"><i class="bi bi-people-fill me-2"></i>Clientes</a>
 </div>
 
-<!-- MAIN CONTENT -->
+<!-- CONTENT -->
 <div class="content">
-    <h2 class="mb-4">Agendamentos Recentes</h2>
 
-    <table class="table table-dark table-hover align-middle mt-3" id="tabela-clientes">
+    <h2 class="mb-4 fw-bold">Todos os Agendamentos</h2>
+
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle">
             <thead>
                 <tr>
                     <th>Nome</th>
                     <th>E-mail</th>
-                    <th>Descrição do Serviço</th>
-                    <th>Data da Solicitação</th>
-                    <th>Contato</th>
+                    <th>Descrição</th>
+                    <th>Data</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Dados serão inseridos pelo JS -->
+            <tbody id="lista-agendamentos">
+                <!-- Preenchido pelo JS -->
             </tbody>
         </table>
-
     </div>
+
 </div>
 
-<!-- FOOTER -->
 <footer>
     © 2025 Wayne Tech — Todos os direitos reservados
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script_dados_clientes.js"></script>
+
+<script src="../assets/js/script_dados_clientes.js"></script>
 
 </body>
 </html>

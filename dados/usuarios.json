@@ -1,0 +1,21 @@
+[
+    {
+        "nome": "Administrador",
+        "email": "adm@gmail.com",
+        "senha": "12345678",
+        "tipo": "adm"
+    },
+    {
+        "nome": "Cliente",
+        "email": "cliente@gmail.com",
+        "senha": "12345678",
+        "tipo": "cliente"
+    },
+    {
+        "nome": "Elaine Priscila",
+        "email": "elaine2025@gmail.com",
+        "senha": "12345678",
+        "tipo": "cliente",
+        "dataCadastro": "2025-12-01 01:53:46"
+    }
+]

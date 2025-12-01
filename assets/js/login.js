@@ -5,7 +5,7 @@ function login(){
     
     if (email === "cliente@gmail.com" && senha === "12345678") {
         alert("Login Realizado com sucesso");
-        window.location.href = "home_cliente.html";
+        window.location.href = "home_cliente.php";
 
     }else if(email === "adm@gmail.com" && senha === "12345678"){
         alert("Login Realizado com sucesso");
