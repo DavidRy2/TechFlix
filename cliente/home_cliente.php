@@ -175,7 +175,7 @@ require __DIR__ . '/proteger_cliente.php';
 </nav>
 
 <!-- HERO -->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" style="margin-top: 55px">
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1300" style="margin-top: 55px">
 
     <div class="carousel-inner">
 
