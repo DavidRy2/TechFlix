@@ -1,31 +1,26 @@
 <?php 
 session_start();
 
-// PROCESSAMENTO DO FORMULÁRIO — executa quando o método for POST
+// PROCESSAMENTO DO FORMULÁRIO
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $arquivo = "../dados/agendamentos.json";
 
-    // Se o arquivo não existir, cria um vazio
     if (!file_exists($arquivo)) {
         file_put_contents($arquivo, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
     }
 
-    // Coleta dados
     $nome = $_POST['nome'] ?? '';
     $email = $_POST['email'] ?? '';
     $mensagem = $_POST['mensagem'] ?? '';
 
-    // Validação básica
     if ($nome === '' || $email === '' || $mensagem === '') {
         echo "<script>alert('Preencha todos os campos!'); window.location.href='agendamento.php';</script>";
         exit;
     }
 
-    // Carregar dados existentes
     $dados = json_decode(file_get_contents($arquivo), true);
 
-    // Criar novo registro
     $novoAgendamento = [
         "nome" => $nome,
         "email" => $email,
@@ -35,10 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $dados[] = $novoAgendamento;
 
-    // Salvar
     file_put_contents($arquivo, json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-    // REDIRECIONA PARA “Meus agendamentos”
     header("Location: ../cliente/meus_agendamentos.php?status=ok");
     exit;
 }
@@ -55,155 +48,176 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        /* ---------- FUNDO COM IMAGEM + OVERLAY ---------- */
         body {
-            background: url('../assets/img/fundo.jpg') no-repeat center/cover;
-            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            position: relative;
+            background: 
+                linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+                url('../assets/img/fundo.jpg'); /* SUA IMAGEM DE FUNDO */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #dcdcdc;
+            font-family: "Segoe UI", sans-serif;
+            overflow-x: hidden;
         }
 
-        body::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(2px);
+        .navbar {
+            background: rgba(10, 10, 14, 0.85) !important;
+            border-bottom: 1px solid #2a2a2f;
+            backdrop-filter: blur(10px);
         }
 
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0dcaf0 !important;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #0dcaf0 !important;
+        }
+
+        /* ---------- CARD DE AGENDAMENTO ---------- */
         .card-agendar {
-            width: 100%;
-            max-width: 420px;
-            background: #2b313cd0;
+            max-width: 450px;
+            background: rgba(20, 20, 25, 0.92);
+            border: 1px solid #23232b;
             border-radius: 18px;
-            border: 1px solid #3a414d;
-            padding-bottom: 20px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
-            position: relative;
-            z-index: 2;
-            margin: 80px auto;
+            padding: 25px;
+            margin: 90px auto;   /* AQUI: CARD MAIS PRA CIMA */
+            box-shadow: 0 0 25px rgba(13, 202, 240, 0.15);
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+}
+
+
+        .card-agendar:hover {
+            border-color: #0dcaf0;
+            box-shadow: 0 0 35px rgba(13, 202, 240, 0.25);
         }
 
-        .card-header {
-            background: #0a3a78;
-            border-radius: 18px 18px 0 0;
-            padding: 25px 10px;
+        .card-header-custom {
             text-align: center;
+            margin-bottom: 18px;
         }
 
         .logo {
-            width: 95px;
-            height: 95px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            object-fit: cover;
-            background: #fff2;
+            border: 3px solid #0dcaf0;
             padding: 5px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(13, 202, 240, 0.4);
         }
 
         .form-control {
-            background: #1f242dcc;
-            border: 1px solid #3a414d;
+            background: #1a1a21;
+            border: 1px solid #2d2d36;
             color: white;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
         .form-control:focus {
-            border-color: #0a3a78;
-            box-shadow: 0 0 5px #0a3a78;
+            border-color: #0dcaf0;
+            box-shadow: 0 0 10px rgba(13, 202, 240, 0.4);
         }
 
         .btn-wayne {
-            background: #0a3a78 !important;
-            color: #fff !important;
-            border: none !important;
-            border-radius: 10px !important;
-            padding: 12px 0 !important;
-            font-size: 1rem !important;
-            font-weight: 500 !important;
-            width: 100% !important;
+            background: #0dcaf0;
+            color: #0d0d12;
+            border: none;
+            font-weight: 600;
+            padding: 12px;
+            border-radius: 12px;
+            width: 100%;
+            transition: 0.25s;
         }
 
         .btn-wayne:hover {
-            background: #072c5a !important;
+            background: #aef7ff;
+            color: #000;
         }
 
         footer {
-            padding: 25px 0;
-            background: #111518;
-            border-top: 1px solid #222831;
-            position: relative;
-            z-index: 2;
+            margin-top: 70px;
+            padding: 35px 0;
+            text-align: center;
+            background: rgba(12, 12, 16, 0.85);
+            border-top: 1px solid #2d2d32;
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm position-relative" style="z-index: 3;">
-        <div class="container">
-            <a class="navbar-brand fw-bold fs-4 text-info" href="../cliente/home_cliente.php">Wayne Tech</a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="../cliente/home_cliente.php">Wayne Tech</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
 
-                    <li class="nav-item"><a href="../cliente/home_cliente.php" class="nav-link">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="../cliente/home_cliente.php">Início</a></li>
 
-                    <li class="nav-item"><a href="../servicos.php" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="../servicos.php">Serviços</a></li>
 
-                    <li class="nav-item"><a href="agendamento.php" class="nav-link active">Agendamento</a></li>
+                <li class="nav-item"><a class="nav-link active" href="agendamento.php">Agendamento</a></li>
 
-                    <li class="nav-item"><a href="../cliente/meus_agendamentos.php" class="nav-link">Meus Agendamentos</a></li>
+                <li class="nav-item"><a class="nav-link" href="../cliente/meus_agendamentos.php">Meus Agendamentos</a></li>
 
-                    <!-- Nome do usuário -->
-                    <li class="nav-item d-flex align-items-center ms-3">
-                        <span class="text-info fw-semibold">👋 <?= $_SESSION['usuario']['nome'] ?></span>
-                    </li>
+                <li class="nav-item d-flex align-items-center ms-3">
+                    <span class="text-info fw-semibold">👋 <?= $_SESSION['usuario']['nome'] ?></span>
+                </li>
 
-                    <li class="nav-item ms-2">
-                        <a href="../sistema/logout.php" class="btn btn-danger btn-sm">Sair</a>
-                    </li>
-
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="card card-agendar">
-        <div class="card-header">
-            <img src="../assets/img/LOGO3.jpeg" class="logo" alt="WayneTech">
-        </div>
-
-        <div class="card-body text-center">
-            <h3 class="mb-4">Agendar Atendimento</h3>
-
-            <form method="POST" action="agendamento.php">
-                <div class="mb-3">
-                    <input type="text" name="nome" class="form-control" placeholder="Nome" required>
-                </div>
-
-                <div class="mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="E-mail" required>
-                </div>
-
-                <div class="mb-3">
-                    <textarea name="mensagem" class="form-control" rows="4" placeholder="Quero consertar meu iPhone..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-wayne">Agendar</button>
-            </form>
+                <li class="nav-item ms-2">
+                    <a class="btn btn-danger btn-sm" href="../sistema/logout.php">Sair</a>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
 
-    <footer class="text-center text-light">
-        <p>© 2025 Wayne Tech — Todos os direitos reservados</p>
-        <a href="#" class="text-primary text-decoration-none">Voltar ao topo</a>
-    </footer>
+<!-- CARD DE AGENDAMENTO -->
+<div class="card-agendar">
+    <div class="card-header-custom">
+        <img src="../assets/img/LOGO3.jpeg" class="logo" alt="WayneTech">
+    </div>
+
+    <h3 class="text-center mb-4">Agendar Atendimento</h3>
+
+    <form method="POST" action="agendamento.php">
+        <div class="mb-3">
+            <input type="text" name="nome" class="form-control" placeholder="Seu nome" required>
+        </div>
+
+        <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required>
+        </div>
+
+        <div class="mb-3">
+            <textarea name="mensagem" rows="4" class="form-control" placeholder="Descreva o problema..." required></textarea>
+        </div>
+
+        <button class="btn-wayne" type="submit">Enviar Agendamento</button>
+    </form>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p class="mb-1">© 2025 Wayne Tech — Todos os direitos reservados</p>
+    <a href="#" class="text-secondary text-decoration-none">Voltar ao topo</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

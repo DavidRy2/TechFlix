@@ -4,35 +4,11 @@
         "email": "elaine2@gmail.com",
         "mensagem": "tela quebrada.",
         "data": "30\/11\/2025 21:55"
-    },
+    }, 
     {
-        "nome": "elaine",
-        "email": "elaine@gmail.com",
-        "mensagem": "tela quebrada",
-        "data": "30\/11\/2025 23:57"
-    },
-    {
-        "nome": "elaine",
-        "email": "elaine@gmail.com",
-        "mensagem": "tela quebrada",
-        "data": "01\/12\/2025 00:38"
-    },
-    {
-        "nome": "elaine",
-        "email": "elaine@gmailcom",
-        "mensagem": "tela quebrada",
-        "data": "01\/12\/2025 00:58"
-    },
-    {
-        "nome": "elaine",
-        "email": "elaine@gmail.com",
-        "mensagem": "sem carregar",
-        "data": "01\/12\/2025 02:35"
-    },
-    {
-        "nome": "Elaine",
-        "email": "naynepri@gmail.com",
-        "mensagem": "Celular sem carregar",
-        "data": "01\/12\/2025 02:41"
+        "nome": "David",
+        "email": "teste@gmail.com",
+        "mensagem": "Bateria viciada",
+        "data": "01\/12\/2025 17:08"
     }
 ]
