@@ -16,48 +16,98 @@ require __DIR__ . '/proteger_admin.php';
     <style>
         body {
             padding-top: 70px;
-            background-color: #121212;
-            color: #f1f1f1;
+            background: #0b0c10;
+            color: #e5e5e5;
+            font-family: "Segoe UI", sans-serif;
         }
 
-        /* Sidebar */
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(90deg, #0a0b0f, #10121a);
+            border-bottom: 1px solid #1f2937;
+        }
+
+        .navbar-brand {
+            color: #0dcaf0 !important;
+            letter-spacing: 1px;
+        }
+
+        /* SIDEBAR */
         .sidebar {
             height: 100vh;
+            width: 240px;
             position: fixed;
             top: 0;
             left: 0;
-            width: 220px;
-            background-color: #1e1e1e;
             padding-top: 70px;
-            border-right: 1px solid #333;
+            background: rgba(15, 15, 20, 0.92);
+            backdrop-filter: blur(8px);
+            border-right: 1px solid #1f2937;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
         }
+
         .sidebar a {
             display: block;
-            color: #f1f1f1;
-            padding: 15px 20px;
+            padding: 14px 22px;
+            font-size: 1rem;
+            color: #d1d5db;
             text-decoration: none;
-        }
-        .sidebar a:hover, .sidebar a.active {
-            background-color: #333;
-            border-radius: 8px;
+            border-left: 3px solid transparent;
+            transition: .2s;
         }
 
-        /* Conteúdo */
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #11141b;
+            border-left: 3px solid #0dcaf0;
+            color: #0dcaf0;
+        }
+
+        /* MAIN CONTENT */
         .content {
             margin-left: 240px;
-            padding: 20px;
-            min-height: calc(100vh - 150px); /* espaço para o footer */
+            padding: 30px;
+            min-height: calc(100vh - 150px);
         }
 
-        /* Rodapé centralizado dentro da área principal */
+        h2 {
+            color: #0dcaf0;
+            font-weight: 600;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* TABLE */
+        .table {
+            background: #11141b;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .table thead {
+            background: #0d1117;
+            color: #0dcaf0;
+        }
+
+        .table tbody tr:hover {
+            background: rgba(13, 202, 240, 0.08);
+            transition: 0.2s;
+        }
+
+        .table td, .table th {
+            padding: 18px;
+        }
+
+        /* FOOTER */
         footer {
             width: calc(100% - 240px);
             margin-left: 240px;
             padding: 20px 0;
             text-align: center;
-            border-top: 1px solid #333;
+            border-top: 1px solid #1f2937;
             color: #888;
-            position: relative;
+            background: #0a0b0f;
         }
     </style>
 </head>
@@ -65,9 +115,12 @@ require __DIR__ . '/proteger_admin.php';
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-dark fixed-top shadow-sm">
+<nav class="navbar navbar-dark fixed-top shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#">Wayne Tech Admin</a>
+        <a class="navbar-brand fw-bold" href="#">
+            <i class="bi bi-shield-lock-fill me-2"></i>
+            Wayne Tech Admin
+        </a>
 
         <div class="d-flex align-items-center">
             <span class="text-light me-3">
@@ -75,7 +128,7 @@ require __DIR__ . '/proteger_admin.php';
             </span>
 
             <a class="btn btn-danger btn-sm" href="../sistema/logout.php">
-                Sair
+                <i class="bi bi-box-arrow-right"></i> Sair
             </a>
         </div>
     </div>
@@ -92,33 +145,33 @@ require __DIR__ . '/proteger_admin.php';
 <!-- MAIN CONTENT -->
 <div class="content">
 
-    <h2 class="mb-4">Agendamentos Recentes</h2>
+    <h2>Agendamentos Recentes</h2>
 
-    <table class="table table-dark table-hover align-middle mt-3">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Descrição do Serviço</th>
-                <th>Data da Solicitação</th>
-            </tr>
-        </thead>
+    <div class="table-responsive">
+        <table class="table table-dark table-hover align-middle mt-3">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Descrição do Serviço</th>
+                    <th>Data da Solicitação</th>
+                </tr>
+            </thead>
 
-        <tbody id="lista-agendamentos">
-            <!-- Preenchido pelo JS -->
-        </tbody>
-    </table>
+            <tbody id="lista-agendamentos">
+                <!-- Preenchido pelo JS -->
+            </tbody>
+        </table>
+    </div>
 
 </div>
 
-<!-- FOOTER CENTRALIZADO -->
+<!-- FOOTER -->
 <footer>
     © 2025 Wayne Tech — Todos os direitos reservados
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- JS correto -->
 <script src="../assets/js/script_dados_clientes.js"></script>
 
 </body>
