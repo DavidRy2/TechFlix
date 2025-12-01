@@ -87,7 +87,7 @@ $meusAgendamentos = array_filter($dados, function ($item) use ($usuarioEmail) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a href="home_cliente.php" class="nav-link">Início</a></li>
-                    <li class="nav-item"><a href="serviços.html" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="../servicos.php" class="nav-link">Serviços</a></li>
                     <li class="nav-item"><a href="meus_agendamentos.php" class="nav-link active">Meus Agendamentos</a></li>
                     <li class="nav-item"><a href="../logout.php" class="nav-link text-danger fw-bold">Sair</a></li>
                 </ul>

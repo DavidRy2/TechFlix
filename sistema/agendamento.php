@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <li class="nav-item"><a href="../cliente/home_cliente.php" class="nav-link">Início</a></li>
 
-                    <li class="nav-item"><a href="../cliente/serviços.html" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="../servicos.php" class="nav-link">Serviços</a></li>
 
                     <li class="nav-item"><a href="agendamento.php" class="nav-link active">Agendamento</a></li>
 
@@ -165,8 +165,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </li>
 
                     <li class="nav-item ms-2">
-                        <a href="../logout.php" class="btn btn-danger btn-sm">Sair</a>
+                        <a href="../sistema/logout.php" class="btn btn-danger btn-sm">Sair</a>
                     </li>
+
 
                 </ul>
             </div>
