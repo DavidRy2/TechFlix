@@ -110,7 +110,7 @@ $email = $_SESSION['usuario']['email'];
                 </li>
 
                 <!-- CORRIGIDO -->
-                <li class="nav-item"><a href="cliente/home_cliente.php" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="../cliente/home_cliente.php" class="nav-link">Início</a></li>
 
                 <li class="nav-item">
                     <a href="servicos.php" class="nav-link active" style="color: #0dcaf0;">Serviços</a>

@@ -173,16 +173,16 @@ require __DIR__ . '/proteger_cliente.php';
     </div>
 </nav>
 
-<!-- HERO -->
+
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1300" style="margin-top: 55px">
 
     <div class="carousel-inner">
 
         <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9');">
             <div class="carousel-caption-custom text-light">
-                <h1>Tecnologia ao seu alcance</h1>
-                <p>Smartphones, acessórios e muito mais por preços imbatíveis.</p>
-                <a href="#" class="btn btn-primary btn-hero">Ver Smartphones</a>
+                <h1>Assistência técnica rápida e confiável para seu computador</h1>
+                <p>Diagnóstico gratuito e atendimento no mesmo dia.</p>
+                <a href="../servicos.php" class="btn btn-primary btn-hero">AGENDAR</a>
             </div>
         </div>
 

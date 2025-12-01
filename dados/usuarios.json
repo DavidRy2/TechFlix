@@ -45,5 +45,12 @@
         "senha": "12345",
         "tipo": "cliente",
         "dataCadastro": "2025-12-01 16:50:46"
+    },
+    {
+        "nome": "Gabriel",
+        "email": "gabriel@123",
+        "senha": "123456",
+        "tipo": "cliente",
+        "dataCadastro": "2025-12-01 18:01:12"
     }
 ]
