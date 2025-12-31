@@ -155,7 +155,7 @@ require __DIR__ . '/proteger_cliente.php';
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
                 
-                <li class="nav-item"><a class="nav-link active" href="home_cliente.php">Início</a></li>
+                <li class="nav-item"><a class="nav-link active" href="home_cliente.php" style="color: #0dcaf0;">Início</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="../servicos.php">Serviços</a></li>
 
